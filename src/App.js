@@ -1,9 +1,8 @@
 import React, {Component} from "react";
 import {Navbar, NavbarBrand} from "reactstrap";
 import "./App.css";
-import Menu from "./components/MenuComponenets.js";
+import Menu from "./components/MenuComponent.js";
 import {DISHES} from "./shared/dishes";
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +20,8 @@ class App extends Component {
           </div>
         </Navbar>
         <Menu dishes={this.state.dishes} />
+
+        <div className="row"></div>
       </div>
     );
   }

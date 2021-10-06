@@ -1,14 +1,10 @@
 import React, {Component} from "react";
 import {Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from "reactstrap";
-import Dishdetail from "./DishdetailComponent";
+
 
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedDish: null,
-      // Sert à  cliquer un event  qui rend au Dishes
-    };
   }
 
   onDishSelect(dish) {

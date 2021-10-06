@@ -48,9 +48,7 @@ class Dishdetail extends Component {
       </div>
   )
 }
-    return <ul className="list-unstyled">
-      {coms}
-      </ul>
+
   render() {
     let comments = null;
     if (this.props.selectedDish != null) {
@@ -68,6 +66,6 @@ class Dishdetail extends Component {
     }
 
     // props est une suite de variable, l'ensemble des propriétées du component
-  }
+  }}
 
 export default Dishdetail;

@@ -21,34 +21,30 @@ class Dishdetail extends Component {
       return <div></div>;
     }
   }
+  /* render date  !
+  !todo render the date with intl format*/
   renderComments(comments) {
-    const coms = comments.map((comment) => {
+    const com = comments.map((comment) => {
       return (
-
-          <li key={comment.id}>
-              <p>{comment.comment}</p>
-              <p>-- {comment.author},
-              &nbsp;
-              {new Intl.DateTimeFormat('fr-FR', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: '2-digit'
-              }).format(new Date(comment.date))}
+        <li key={comment.id}>
+          <div className="container">
+            <div className="row">
+              <p class="text-left">{comment.comment}</p>
+            </div>
+            <div className="row">
+              <p class="text-left">
+                -- &nbsp;{comment.author},
+               {new Intl.DateTimeFormat('fr-FR', {year:"numeric",month:"short",day:"2-digit"}).format(new Date(Date.parse({comment.date})))}
               </p>
-          </li>
-      )
-  })
-  return (
-      <div className='col-12 col-md-5 m-1'>
-          <h4> Comments </h4>
-          <ul className='list-unstyled'>
-              {coms}
-          </ul>
+            </div>
+            <br />
+          </div>
+        </li>
+      );
+    });
 
-      </div>
-  )
-}
-
+    return <ul className="list-unstyled">{com}</ul>;
+  }
   render() {
     let comments = null;
     if (this.props.selectedDish != null) {
@@ -65,7 +61,8 @@ class Dishdetail extends Component {
       return <div></div>;
     }
 
-    // props est une suite de variable, l'ensemble des propriétées du component
-  }}
+    // props est une suite de variable, l'ensemble des propriÃ©tÃ©es du component
+  }
+}
 
 export default Dishdetail;

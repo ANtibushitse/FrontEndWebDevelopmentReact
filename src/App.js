@@ -3,6 +3,8 @@ import {Navbar, NavbarBrand} from "reactstrap";
 import "./App.css";
 import Menu from "./components/MenuComponent.js";
 import {DISHES} from "./shared/dishes";
+/* 
+!todo delet the props */
 class App extends Component {
   constructor(props) {
     super(props);

@@ -22,27 +22,35 @@ class Dishdetail extends Component {
     }
   }
   renderComments(comments) {
-    const com = comments.map((comment) => {
+    const coms = comments.map((comment) => {
       return (
-        <li key={comment.id}>
-          <div className="container">
-            <div className="row">
-              <p class="text-left">{comment.comment}</p>
-            </div>
-            <div className="row">
-              <p class="text-left">
-                -- &nbsp;{comment.author},&nbsp;
-                {comment.date}
-              </p>
-            </div>
-            <br />
-          </div>
-        </li>
-      );
-    });
 
-    return <ul className="list-unstyled">{com}</ul>;
-  }
+          <li key={comment.id}>
+              <p>{comment.comment}</p>
+              <p>-- {comment.author},
+              &nbsp;
+              {new Intl.DateTimeFormat('fr-FR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: '2-digit'
+              }).format(new Date(comment.date))}
+              </p>
+          </li>
+      )
+  })
+  return (
+      <div className='col-12 col-md-5 m-1'>
+          <h4> Comments </h4>
+          <ul className='list-unstyled'>
+              {coms}
+          </ul>
+
+      </div>
+  )
+}
+    return <ul className="list-unstyled">
+      {coms}
+      </ul>
   render() {
     let comments = null;
     if (this.props.selectedDish != null) {
@@ -61,6 +69,5 @@ class Dishdetail extends Component {
 
     // props est une suite de variable, l'ensemble des propriétées du component
   }
-}
 
 export default Dishdetail;

@@ -34,7 +34,8 @@ class Dishdetail extends Component {
             <div className="row">
               <p class="text-left">
                 -- &nbsp;{comment.author},
-               {new Intl.DateTimeFormat('fr-FR', {year:"numeric",month:"short",day:"2-digit"}).format(new Date(Date.parse({comment.date})))}
+                {new Intl.DateTimeFormat('Us-US', { year: 'numeric', month: 'short', day: '2-digit'})
+                    .format(new Date(Date.parse(comment.date)))}
               </p>
             </div>
             <br />
@@ -61,7 +62,7 @@ class Dishdetail extends Component {
       return <div></div>;
     }
 
-    // props est une suite de variable, l'ensemble des propriÃ©tÃ©es du component
+    // props est une suite de variable, l'ensemble des  propriété du component
   }
 }
 
